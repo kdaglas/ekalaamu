@@ -1,4 +1,4 @@
-# Ekalaamu
+# Ekalaamu [![Build Status](https://travis-ci.org/katunold/ekalaamu.svg?branch=develop)](https://travis-ci.org/katunold/ekalaamu) [![Maintainability](https://api.codeclimate.com/v1/badges/809dc68f4613ec441db8/maintainability)](https://codeclimate.com/github/katunold/ekalaamu/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/809dc68f4613ec441db8/test_coverage)](https://codeclimate.com/github/katunold/ekalaamu/test_coverage)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.1.
 
