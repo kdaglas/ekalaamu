@@ -3,7 +3,16 @@ import { Routes, RouterModule } from '@angular/router';
 import { SocialAuthComponent } from './components/social-auth/social-auth.component';
 
 const routes: Routes = [
-  { path: 'social', component: SocialAuthComponent }
+  // { path: 'social', component: SocialAuthComponent },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(mod => mod.AuthModule)
+  },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

@@ -1,0 +1,111 @@
+// Variables
+$gray: #9c9c9c;
+$ten-px: 10px;
+
+// Mixins
+@mixin padding($top: 10px, $right: 10px, $bottom: 10px, $left: 10px) {
+  padding: $top $right $bottom $left;
+}
+
+.container {
+  padding: 1%;
+
+  #close-icon {
+    outline: none;
+    @include padding();
+    &:hover {
+      background-color: $gray;
+      border-radius: 51%;
+      cursor: pointer;
+    }
+  }
+}
+
+.submit-btn {
+  background: #000000 !important;
+  border-radius: 50px !important;
+  font-weight: 500 !important;
+  color: white;
+  @include padding($ten-px, 0, $ten-px, 12px !important);
+  margin-left: 10px;
+}
+
+.form-control {
+  background-color: #f2f2f2;
+  border-radius: 3px;
+  @include padding($ten-px, 0, 0, $ten-px);
+  height: 46px;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 16px;
+}
+
+form {
+  width: 310px;
+  text-align: center;
+}
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+::ng-deep .mat-form-field-infix {
+  border-top: 0px;
+  padding-top: 7px solid black;
+}
+::ng-deep .mat-form-field-placeholder {
+  color: red;
+  @include padding(12px, 0, 0, 0);
+}
+::ng-deep .mat-form-field {
+  .mat-form-field-label {
+    display: none;
+  }
+  .mat-form-field-ripple {
+    background-color: $gray;
+  }
+}
+::ng-deep .mat-form-field {
+  .mat-form-field-label {
+    color: $gray;
+    @include padding(25px, 0, 0, $ten-px);
+    font-family: ubuntu;
+    font-style: normal;
+    font-weight: normal;
+  }
+}
+::ng-deep .mat-form-field.mat-focused {
+  .mat-form-field-label {
+    color: $gray;
+    @include padding(30px, 0, 0, 0);
+  }
+  .mat-form-field-ripple {
+    background-color: $gray;
+  }
+}
+img {
+  width: 40px;
+}
+.title {
+  font-family: Noteworthy;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 48px;
+  color: #000000;
+}
+.action {
+  @include padding(15px, 0, $ten-px, 0);
+  color: #a1a1a1;
+  a {
+    text-decoration: none;
+    color: #a1a1a1;
+  }
+}
+
+.mat-button[disabled] {
+  cursor: not-allowed !important;
+  color: #747272 !important;
+}
+#social-head {
+  margin-bottom: 4px !important;
+}
