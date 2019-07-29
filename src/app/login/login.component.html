@@ -1,0 +1,56 @@
+
+<h1 style="text-align:center; font-family: Noteworthy" >
+ Ekalaamu
+</h1>
+<div class="login">
+    <h5 style="text-align:center" class="login-header">Or Create a new Account</h5>
+
+    <body>
+    <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
+      <div>
+      <input
+        type="email"
+        id="email"
+        email="true"
+        class="form-control"
+        [formControl]="emailCtrl"
+      >
+      </div>
+    <div id="error" *ngIf="(emailCtrl.dirty || emailCtrl.touched) && emailCtrl.errors"
+         class="alert alert-danger">
+      <!--emailCtrl.errors?.required-->
+      <div *ngIf="emailCtrl.errors.required">
+        *email is required.
+      </div>
+      <div *ngIf="emailCtrl.errors.pattern">
+        *enter valid email address
+      </div>
+    </div>
+
+
+<div>
+      <input
+        type="password"
+        id="password"
+        class="form-control"
+        [formControl]="passwordCtrl"
+      >
+</div>
+      <div id="error" *ngIf="(passwordCtrl.dirty || passwordCtrl.touched) && passwordCtrl.errors"
+           class="alert alert-danger">
+        <!--emailCtrl.errors?.required-->
+        <div *ngIf="passwordCtrl.errors.required">
+          *password is required.
+        </div>
+        <div *ngIf="passwordCtrl.errors.minlength">
+          *password must contain 3 or more characters
+        </div>
+      </div>
+
+      <div class="wrapper">
+        <button mat-button class="button" type="submit" [disabled]="loginForm.invalid" >Login</button>
+      </div>
+
+      </form>
+    </body>
+</div>
