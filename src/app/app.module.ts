@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
+import { SocialAuthComponent } from './components/social-auth/social-auth.component';
 import {
   AuthServiceConfig,
   FacebookLoginProvider,
@@ -14,6 +15,10 @@ import {
 } from 'angularx-social-login';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptorService } from './shared/interceptors/error-interceptor.service';
+
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { LandingPageComponent } from 'src/app/components/landing-page/landing-page.component';
 
 const config = new AuthServiceConfig([
   {
@@ -34,9 +39,12 @@ export function provideConfig() {
   return config;
 }
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SocialAuthComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +52,8 @@ export function provideConfig() {
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SocialLoginModule
+    SocialLoginModule,MaterialModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {
@@ -57,6 +66,8 @@ export function provideConfig() {
       multi: true,
     }
   ],
+  entryComponents: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
