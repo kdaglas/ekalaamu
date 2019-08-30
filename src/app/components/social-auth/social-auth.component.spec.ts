@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SocialAuthComponent } from './social-auth.component';
 import {SharedImports} from '../../utils/test/shared-imports';
 import {AuthService} from 'angularx-social-login';
-import { authServiceSpy, socialAuthServiceSpy } from '../../utils/test/spies';
+import { authServiceSpy, socialAuthServiceSpy } from '../../helpers/tests/spies.spec';
 import {SocialAuthService} from '../../services/social-auth/social-auth.service';
 import {of} from 'rxjs';
 import {triggerEvent} from '../../utils/test/utils';

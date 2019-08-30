@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  base_url: 'http://127.0.0.1:8000/api/auth/',
   client_id: 'sQ6AHJQxerHLfevr5rywMBFIoy9tpMwiKMbBY94l',
   client_secret: '5M1tXamlOfcBHuyG3BMbp9A0gRp5b701eZs34pYKzWNtvBgWhTRqMj2s' +
-    'lUbLDj2S0Df4gv0UP6xjZEHTP5g29EDYjFyXgoAoculwIRn1OLXQieA77cRBbLvGj1oqbhbc'
+    'lUbLDj2S0Df4gv0UP6xjZEHTP5g29EDYjFyXgoAoculwIRn1OLXQieA77cRBbLvGj1oqbhbc',
+  baseUrl: 'https://ah-backend-poseidon-staging.herokuapp.com/api/'
 };
 
 /*

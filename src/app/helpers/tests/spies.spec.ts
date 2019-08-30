@@ -1,9 +1,12 @@
-const createSpyObj = (name: string, methods: string[]) => {
-  // @ts-ignore
-  return jasmine.createSpyObj(name, methods);
-}
+const createSpyObj = (name: string, methods: string[]) => jasmine.createSpyObj(name, methods);
+
+
+export const routerSpy = createSpyObj('Router', ['navigate']);
+
+export const toasterServiceSpy = createSpyObj('ToasterService', ['onSuccess', 'onFailure']);
 
 export const authServiceSpy = createSpyObj('AuthService', [
+  'signup', 'currentUserSubject',
   'signIn',
   'authState'
 ]);

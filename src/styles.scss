@@ -58,3 +58,17 @@ $ekalaamu-theme: mat-light-theme($ekalaamu-primary, $ekalaamu-accent, $ekalaamu-
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.toast-success {
+  background-color: #0adc09;
+}
+.toast-error {
+  background-color: #dc3c09;
+}
+.toast-error, .toast-success {
+    .mat-simple-snackbar-action {
+        color: white !important;
+    }
+}
+
+.toast-error, .toast-success { color: #FFF}
