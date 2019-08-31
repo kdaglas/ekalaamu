@@ -3,7 +3,7 @@ const createSpyObj = (name: string, methods: string[]) => jasmine.createSpyObj(n
 
 export const routerSpy = createSpyObj('Router', ['navigate']);
 
-export const toasterServiceSpy = createSpyObj('ToasterService', ['onSuccess', 'onFailure']);
+export const toasterServiceSpy = createSpyObj('ToasterService', ['onSuccess', 'onFailure', 'onInfo']);
 
 export const authServiceSpy = createSpyObj('AuthService', [
   'signup', 'currentUserSubject',

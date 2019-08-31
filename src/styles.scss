@@ -62,10 +62,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .toast-success {
   background-color: #0adc09;
 }
+.toast-info {
+  background-color: #f9cd0b;
+}
 .toast-error {
   background-color: #dc3c09;
 }
-.toast-error, .toast-success {
+.toast-error, .toast-success, .toast-info {
     .mat-simple-snackbar-action {
         color: white !important;
     }

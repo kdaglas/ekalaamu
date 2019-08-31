@@ -29,6 +29,11 @@ describe('ToasterService', () => {
     expect(matSnackBarSpy.open).toHaveBeenCalled();
   });
 
+  it('shows info toast', () => {
+    service.onInfo('');
+    expect(matSnackBarSpy.open).toHaveBeenCalled();
+  });
+
   it('shows error toast', () => {
     service.onFailure(toastData.message);
     expect(matSnackBarSpy.open).toHaveBeenCalled();
