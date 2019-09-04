@@ -6,6 +6,9 @@
     "start": "ng serve -o",
     "build": "ng build",
     "test": "ng test --code-coverage",
+    "build:image": "docker build -t katunold/ekalaamu .",
+    "start:container": "docker run -v ${PWD}:/ekalaamu -d -v /ekalaamu/node_modules -p 4204:4200 --name ekalaamu --rm katunold/ekalaamu",
+    "test:container": "docker exec -it ekalaamu ng test --code-coverage --watch=false",
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
