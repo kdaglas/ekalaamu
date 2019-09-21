@@ -63,12 +63,11 @@ $ekalaamu-theme: mat-light-theme(
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
+html,
 body {
+  height: 100vh;
   margin: 0;
   padding: 0;
-  // font-family: 'Ubuntu', sans-serif;
-  // font-family: 'Lato', sans-serif;
 }
 
 .toast-success {
@@ -82,12 +81,31 @@ body {
         color: white !important;
     }
 }
+.toast-error,
+.toast-success {
+  color: #FFF;
+}
 
-.toast-error, .toast-success { color: #FFF}
-// html,
-// body {
-//   height: 100%;
-// }
+.mat-flat-button,
+.login-button,
+.article-title,
+.footer-maintext,
+.site-nav .links li a,
+.about-maintext {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.article-date,
+.article-body,
+.article-author,
+.footer-smalltext,
+.about-smalltext {
+  font-family: "Lato", sans-serif;
+}
+
+.custom-elevation-z2 {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08) !important;
+}
 
 // h1,
 // h2,
