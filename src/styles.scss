@@ -1,7 +1,7 @@
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
 @import "~@angular/material/theming";
-@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Ubuntu:400,500,700&display=swap');
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -64,7 +64,12 @@ $ekalaamu-theme: mat-light-theme(
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  padding: 0;
+  // font-family: 'Ubuntu', sans-serif;
+  // font-family: 'Lato', sans-serif;
+}
 
 .toast-success {
   background-color: #0adc09;
@@ -83,12 +88,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 // body {
 //   height: 100%;
 // }
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Lato";
-}
 
 // h1,
 // h2,
