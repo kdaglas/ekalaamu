@@ -9,16 +9,6 @@ $ten-px: 10px;
 
 .container {
   padding: 1%;
-
-  #close-icon {
-    outline: none;
-    @include padding();
-    &:hover {
-      background-color: $gray;
-      border-radius: 51%;
-      cursor: pointer;
-    }
-  }
 }
 
 .submit-btn {

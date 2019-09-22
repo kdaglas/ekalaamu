@@ -1,16 +1,16 @@
 <div fxLayoutAlign="row" class="social-buttons">
   <div class="social-button">
-    <button id="googleBtn" class="googleBtn" mat-mini-fab color="primary" (click)="signInWithGoogle()">
+    <button id="googleBtn" class="googleBtn" mat-fab color="primary" (click)="socialSignIn('google')">
       <mat-icon><img src="../../../assets/icons/search.svg"></mat-icon>
     </button>
   </div>
   <div class="social-button">
-    <button mat-mini-fab color="primary" (click)="signInWithFacebook()">
+    <button id="facebookBtn" mat-fab color="primary" (click)="socialSignIn('facebook')">
       <mat-icon><img src="../../../assets/icons/facebook.svg"></mat-icon>
     </button>
   </div>
   <div class="social-button">
-    <button mat-mini-fab color="primary" (click)="signInWithLinkedIn()">
+    <button id="linkedInBtn" mat-fab color="primary" (click)="socialSignIn('linkedIn')">
       <mat-icon><img src="../../../assets/icons/linkedin.svg"></mat-icon>
     </button>
   </div>

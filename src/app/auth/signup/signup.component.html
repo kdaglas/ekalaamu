@@ -1,7 +1,6 @@
 <div class="container">
 <div fxLayout="row" fxLayoutAlign="space-between">
   <img src="/assets/icons/ekalaamu.svg" alt="ekalaamu" />
-  <mat-icon id="close-icon"  routerLink="/">close</mat-icon>
 </div>
 <div fxLayout="column" fxLayoutGap="32px" fxLayoutAlign="center center">
   <form
@@ -12,13 +11,13 @@
   <div class="title">Ekalaamu</div>
   <div class="action">Already have an account? <a href="/auth/login">Log In</a></div>
     <mat-form-field>
-      <input class="form-control" matInput placeholder="First Name"  formControlName="firstname" [errorStateMatcher]="matcher" />
-      <mat-error *ngIf="form.firstname.errors?.required"><strong>* Required</strong> </mat-error>
+      <input class="form-control" matInput placeholder="First Name"  formControlName="firstName" [errorStateMatcher]="matcher" />
+      <mat-error *ngIf="form.firstName.errors?.required"><strong>* Required</strong> </mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input class="form-control" matInput placeholder="Last Name" formControlName="lastname" [errorStateMatcher]="matcher" />
-      <mat-error *ngIf="form.lastname.errors?.required"><strong>* Required</strong> </mat-error>
+      <input class="form-control" matInput placeholder="Last Name" formControlName="lastName" [errorStateMatcher]="matcher" />
+      <mat-error *ngIf="form.lastName.errors?.required"><strong>* Required</strong> </mat-error>
     </mat-form-field>
 
     <mat-form-field>

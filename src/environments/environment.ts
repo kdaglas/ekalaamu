@@ -7,7 +7,7 @@ export const environment = {
   client_id: 'sQ6AHJQxerHLfevr5rywMBFIoy9tpMwiKMbBY94l',
   client_secret: '5M1tXamlOfcBHuyG3BMbp9A0gRp5b701eZs34pYKzWNtvBgWhTRqMj2s' +
     'lUbLDj2S0Df4gv0UP6xjZEHTP5g29EDYjFyXgoAoculwIRn1OLXQieA77cRBbLvGj1oqbhbc',
-  baseUrl: 'https://ah-backend-poseidon-staging.herokuapp.com/api/'
+  baseUrl: 'http://localhost:3000/api/v1'
 };
 
 /*
