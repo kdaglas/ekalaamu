@@ -3,7 +3,7 @@ import { throwError } from 'rxjs';
 import { ErrorInterceptorService } from './error-interceptor.service';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { authServiceSpy, toasterServiceSpy } from 'src/app/helpers/tests/spies.spec';
-import { ToasterService } from '../services/toaster.service';
+import { ToasterService } from '../../services/toaster.service';
 
 describe('ErrorInterceptorService', () => {
   let service;

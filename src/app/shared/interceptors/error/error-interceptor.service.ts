@@ -3,7 +3,7 @@ import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/c
 import {Observable, ObservableInput, throwError} from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AuthService } from 'src/app/auth/services/auth.service';
-import { ToasterService } from '../services/toaster.service';
+import { ToasterService } from '../../services/toaster.service';
 
 const errorHandler = (toaster: ToasterService) => (error: any, caught: Observable<any>): ObservableInput<any> => {
   console.log(error);

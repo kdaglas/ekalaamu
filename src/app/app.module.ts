@@ -13,8 +13,10 @@ import {
   SocialLoginModule
 } from 'angularx-social-login';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ErrorInterceptorService } from './shared/interceptors/error-interceptor.service';
+import { ErrorInterceptorService } from './shared/interceptors/error/error-interceptor.service';
 import { LandingPageComponent } from 'src/app/components/landing-page/landing-page.component';
+import { AuthModule } from './auth/auth.module';
+import { AuthComponent } from './auth/auth.component';
 
 
 const config = new AuthServiceConfig([
@@ -40,6 +42,7 @@ export function provideConfig() {
 @NgModule({
   declarations: [
     AppComponent,
+    AuthComponent,
     LandingPageComponent,
   ],
   imports: [
@@ -48,6 +51,7 @@ export function provideConfig() {
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    AuthModule,
     SocialLoginModule,
     MaterialModule,
     BrowserAnimationsModule,
