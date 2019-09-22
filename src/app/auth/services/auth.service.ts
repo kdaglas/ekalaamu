@@ -19,7 +19,7 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
 
-  public signup = (newUser) => this.http.post(`${environment.baseDevUrl}/signup`, newUser).pipe(map( (user: any) => {
+  public signup = (newUser) => this.http.post(`${environment.baseUrl}/signup`, newUser).pipe(map( (user: any) => {
     if (user.token) {
       this.currentUserSubject.next({ username: user.username, token: user.token });
       sessionStorage.setItem(`user`, JSON.stringify(user));

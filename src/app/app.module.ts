@@ -14,6 +14,7 @@ import {
 } from 'angularx-social-login';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptorService } from './shared/interceptors/error-interceptor.service';
+import {SocialAuthComponent} from './components/social-auth/social-auth.component';
 
 const config = new AuthServiceConfig([
   {

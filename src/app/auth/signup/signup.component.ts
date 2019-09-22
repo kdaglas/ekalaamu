@@ -27,11 +27,11 @@ export class SignupComponent implements OnInit {
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
-      firstname: ['', Validators.required],
-      lastname: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(8)]],
-  });
+    });
 
   }
   get form() { return this.signupForm.controls; }
@@ -44,5 +44,5 @@ export class SignupComponent implements OnInit {
       }
     });
 
-}
+  }
 }

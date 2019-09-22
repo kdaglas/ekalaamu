@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService, FacebookLoginProvider, GoogleLoginProvider, SocialUser} from 'angularx-social-login';
+import {AuthService, FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider, SocialUser} from 'angularx-social-login';
 import { SocialAuthService } from '../../services/social-auth/social-auth.service';
+import {Router} from '@angular/router';
+import {ToasterService} from '../../shared/services/toaster.service';
 
 @Component({
   selector: 'app-social-auth',
@@ -13,7 +15,9 @@ export class SocialAuthComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private socialAuth: SocialAuthService
+    private socialAuth: SocialAuthService,
+    private router: Router,
+    public toaster: ToasterService
   ) { }
 
   ngOnInit() {
@@ -22,37 +26,36 @@ export class SocialAuthComponent implements OnInit {
     });
   }
 
-  signInWithGoogle = (): void => {
-    this.authService.signIn(GoogleLoginProvider.PROVIDER_ID)
-      .then(user => {
-        this.socialAuth.authenticate(user.authToken, 'google-oauth2').subscribe(
-          res => console.log(res),
-          err => console.log(err)
-        );
-      })
-      .catch(err => {
-        console.log(err);
-      });
+  socialSignIn = (socialStrategy: string): void => {
+    switch (socialStrategy) {
+      case 'google':
+        this.socialAuthentication(GoogleLoginProvider.PROVIDER_ID, '/google');
+        break;
+      case 'facebook':
+        this.socialAuthentication(FacebookLoginProvider.PROVIDER_ID, '/facebook');
+        break;
+      default:
+        this.signInWithLinkedIn();
+    }
   }
 
-  signInWithFacebook = () => {
-    this.authService.signIn(FacebookLoginProvider.PROVIDER_ID)
+  socialAuthentication = (strategy: any, route: string): void => {
+    this.authService.signIn(strategy)
       .then(user => {
-        this.socialAuth.authenticate(user.authToken, 'facebook').subscribe(
-          res => console.log(res),
-          err => console.log(err)
+        this.socialAuth.authenticate(user.authToken, route).subscribe(
+          res => {
+            localStorage.setItem('access_token', res.token);
+            this.router.navigate(['/']);
+          },
+          () => {
+            this.toaster.onFailure('Sorry, an Error occurred');
+          }
         );
-      })
-      .catch(err => {
-        console.log(err);
       });
   }
 
   signInWithLinkedIn = () => {
-    this.socialAuth.authenticateLinkedIN().subscribe(
-      res => console.log(res),
-      err => console.log(err)
-    );
+    this.toaster.onInfo('Sorry, this service is currently not available');
   }
 
 }

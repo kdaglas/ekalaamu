@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from '@angular/common/http';
-import { Observable, ObservableInput } from 'rxjs';
+import {Observable, ObservableInput, throwError} from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { ToasterService } from '../services/toaster.service';
 
 const errorHandler = (toaster: ToasterService) => (error: any, caught: Observable<any>): ObservableInput<any> => {
+  console.log(error);
   toaster.onFailure(error.error.errors[0]);
   return [];
 };
