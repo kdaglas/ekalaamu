@@ -4,116 +4,126 @@
   overflow: hidden;
   height: 100vh;
   width: 100%;
-}
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-}
-.slide.current {
-  opacity: 1;
-}
-.slide.current .content {
-  opacity: 1;
-  transform: translateX(620px);
-  transition: all 0.7s ease-in-out 0.3s;
-}
-.slide .content {
-  position: absolute;
-  opacity: 0;
-  margin: 50px auto;
-  height: 670px;
-}
-.slide .content .main-body {
-  display: flex;
-  align-items: center;
-  margin: 127px 0;
-  flex-flow: column;
-  justify-content: space-evenly;
-}
-/* css for the middle article box */
-.article-box {
-  background: #fff;
-  display: flex;
-  flex-flow: row;
-  justify-content: space-around;
-  align-items: center;
-  width: 670px;
-  height: 400px;
-}
-.article-picture1,
-.article-picture2,
-.article-picture3,
-.article-picture4,
-.article-picture5,
-.article-picture6 {
-  width: 375px;
-  height: 345px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.article-picture1 {
-  background-image: url("/assets/images/pencil2.jpg");
-}
-.article-picture2 {
-  background-image: url("/assets/images/exercise.jpg");
-}
-.article-picture3 {
-  background-image: url("/assets/images/close.jpg");
-}
-.article-picture4 {
-  background-image: url("/assets/images/kid-music2.jpg");
-}
-.article-picture5 {
-  background-image: url("/assets/images/automotive.jpg");
-}
-.article-picture6 {
-  background-image: url("/assets/images/shoes2.jpg");
-}
-.article-text {
-  width: 250px;
-  height: 230px;
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-}
-.article-date {
-  font-size: 12px;
-  color: #000000;
-}
-.article-title {
-  font-weight: 700;
-  font-size: 25px;
-  color: #000000;
-}
-.article-body {
-  font-size: 14px;
-  color: #777777;
-}
-.article-author {
-  font-size: 15px;
-  font-weight: 700;
-  color: #000000;
-}
-.read-more {
-  background: transparent !important;
-  border: 1.4px solid #000 !important;
-  color: #000 !important;
-  transition: 0.5s;
-}
-.read-more:hover {
-  background-color: #000 !important;
-  color: #fff !important;
-  transition: 0.5s;
-}
-.read-more,
-.article-author,
-.article-body,
-.article-date,
-.article-title {
-  margin: 0;
+
+  .slide.current {
+    opacity: 1;
+
+    .content {
+      opacity: 1;
+      transform: translateX(620px);
+      transition: all 0.7s ease-in-out 0.3s;
+    }
+  }
+
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+
+    .content {
+      position: absolute;
+      opacity: 0;
+      margin: 50px auto;
+      height: 670px;
+
+      .main-body {
+        display: flex;
+        align-items: center;
+        margin: 127px 0;
+        flex-flow: column;
+        justify-content: space-evenly;
+
+        /* css for the middle article box */
+        .article-box {
+          background: #fff;
+          display: flex;
+          flex-flow: row;
+          justify-content: space-around;
+          align-items: center;
+          width: 670px;
+          height: 400px;
+
+          .article-picture1,
+          .article-picture2,
+          .article-picture3,
+          .article-picture4,
+          .article-picture5,
+          .article-picture6 {
+            width: 375px;
+            height: 345px;
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+          .article-picture1 {
+            background-image: url("/assets/images/pencil2.jpg");
+          }
+          .article-picture2 {
+            background-image: url("/assets/images/exercise.jpg");
+          }
+          .article-picture3 {
+            background-image: url("/assets/images/close.jpg");
+          }
+          .article-picture4 {
+            background-image: url("/assets/images/kid-music2.jpg");
+          }
+          .article-picture5 {
+            background-image: url("/assets/images/automotive.jpg");
+          }
+          .article-picture6 {
+            background-image: url("/assets/images/shoes2.jpg");
+          }
+
+          .article-text {
+            width: 250px;
+            height: 230px;
+            display: flex;
+            flex-flow: column;
+            justify-content: space-between;
+
+            .article-date,
+            .article-title,
+            .article-author {
+              color: #000 !important;
+            }
+
+            .article-date,
+            .article-title,
+            .article-body,
+            .article-author {
+              margin: 0;
+            }
+
+            .article-date {
+              font-size: 12px;
+            }
+            .article-title {
+              font-weight: 700;
+              font-size: 25px;
+            }
+            .article-body {
+              color: #777777;
+            }
+            .article-author {
+              font-weight: 700;
+            }
+            .mat-flat-button {
+              background: transparent !important;
+              border: 1.4px solid #000 !important;
+              transition: 0.5s;
+              color: #000 !important;
+            }
+            .mat-flat-button:hover {
+              background-color: #000 !important;
+              color: #fff !important;
+              transition: 0.5s;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 /* css for the main body section */
@@ -123,136 +133,112 @@ section {
   overflow: hidden;
   position: absolute;
   top: 0;
+
+  .main-container {
+    margin: 0 auto;
+    width: 87%;
+    display: flex;
+    flex-flow: column;
+
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      height: 45px;
+      margin-top: 27px;
+
+      .logo-area,
+      .site-nav,
+      .credential-area {
+        height: 45px;
+      }
+
+      .logo-area {
+        .logo {
+          font-family: Noteworthy;
+          font-weight: bolder;
+          font-size: 27px;
+          color: #000;
+          margin: 0 !important;
+        }
+      }
+
+      /* css for the nav bar */
+      .site-nav {
+        .links {
+          margin: 0 !important;
+          height: 45px;
+
+          li {
+            display: inline-block;
+            list-style-type: none;
+            text-align: center;
+            margin-top: 10px !important;
+
+            a {
+              text-decoration: none;
+              color: #000;
+              padding: 15px 25px;
+              transition-duration: 0.5s;
+              text-align: center;
+              font-weight: 700;
+              text-transform: uppercase;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .credential-area {
+        width: 217px;
+        align-items: center;
+
+        .login-button {
+          font-style: normal;
+          font-weight: 700;
+          font-size: 15px;
+          color: #000;
+        }
+      }
+    }
+
+    .about {
+      width: 570px;
+      flex-flow: column;
+      margin: 600px auto;
+
+      .about-text {
+        flex-flow: row;
+
+        .about-maintext {
+          width: 400px;
+          text-align: left;
+          font-weight: 700;
+          font-size: 22px;
+          color: #000000;
+          margin: 0;
+        }
+      }
+
+      .about-smalltext {
+        width: 300px;
+        margin: 17px 0 0;
+        font-size: 15px;
+        color: #000000;
+      }
+    }
+  }
 }
-.main-container {
-  margin: 0 auto;
-  width: 87%;
-  display: flex;
-  flex-flow: column;
-}
-.nav-bar {
-  display: flex;
-  justify-content: space-between;
-  height: 45px;
-  margin-top: 27px;
-}
-.logo-area,
-.site-nav,
-.credential-area {
-  height: 45px;
-}
-.logo {
-  font-family: Noteworthy;
-  font-weight: bolder;
-  font-size: 27px;
-  color: #000;
-  margin: 0 !important;
-}
+
 .credential-area,
+.about-text,
 .footer-text,
-.about-text {
-  display: flex;
-  justify-content: space-between;
-}
-.credential-area {
-  width: 217px;
-  align-items: center;
-}
-/* css for the nav bar */
-.site-nav .links {
-  margin: 0 !important;
-  height: 45px;
-}
-.site-nav .links li {
-  display: inline-block;
-  list-style-type: none;
-  text-align: center;
-  margin-top: 10px !important;
-}
-.site-nav .links li a {
-  text-decoration: none;
-  color: #000;
-  padding: 15px 25px;
-  transition-duration: 0.5s;
-  text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-
-.mat-flat-button {
-  border: none;
-  border-radius: 50px;
-  background-color: #000;
-  color: #fff;
-  width: 140px;
-  height: 45px;
-  font-weight: 700;
-  font-size: 14px;
-}
-.login-button {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 15px;
-  color: #000;
-}
-
-.other-body {
-  display: flex;
-  align-items: center;
-}
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-  width: 570px;
-  flex-flow: column;
-  margin: 40px 0 0;
-}
-.footer-text {
-  display: flex;
-  justify-content: space-between;
-}
-.footer-maintext {
-  width: 400px;
-  text-align: left;
-  font-weight: 700;
-  font-size: 22px;
-  color: #000000;
-  margin: 0;
-}
-.footer-smalltext {
-  width: 300px;
-  margin: 17px 0 0;
-  font-size: 15px;
-  color: #000000;
-}
-
 .about {
   display: flex;
   justify-content: space-between;
-  width: 570px;
-  flex-flow: column;
-  margin: 620px auto;
 }
-.about-text {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-}
-.about-maintext {
-  width: 400px;
-  text-align: left;
-  font-weight: 700;
-  font-size: 22px;
-  color: #000000;
-  margin: 0;
-}
-.about-smalltext {
-  width: 300px;
-  margin: 17px 0 0;
-  font-size: 15px;
-  color: #000000;
+
+.mat-flat-button {
+  width: 140px;
 }
 
 /* 
@@ -265,6 +251,14 @@ section {
 @media (min-width: 1025px) and (max-width: 1440px) {
   .slide.current .content {
     transform: translateX(385px);
+  }
+
+  .slider {
+    .slide.current {
+      .content {
+        transform: translateX(385px);
+      }
+    }
   }
 }
 
@@ -313,18 +307,19 @@ section {
 }
 
 /* Backgorund Images */
-
 .slide:first-child {
   background: url("src/assets/images/pencil.jpg") no-repeat center top/cover;
 }
 .slide:nth-child(2) {
-  background: url("src/assets/images/exercise2.jpg") no-repeat center top/cover;
+  background: url("src/assets/images/exercise2.jpg") no-repeat center
+    top/cover;
 }
 .slide:nth-child(3) {
   background: url("src/assets/images/close2.jpg") no-repeat center top/cover;
 }
 .slide:nth-child(4) {
-  background: url("src/assets/images/kid-music.jpg") no-repeat center top/cover;
+  background: url("src/assets/images/kid-music.jpg") no-repeat center
+    top/cover;
 }
 .slide:nth-child(5) {
   background: url("src/assets/images/automotive2.jpg") no-repeat center

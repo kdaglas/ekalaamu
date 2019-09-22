@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import {AuthService, FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider, SocialUser} from 'angularx-social-login';
-import { SocialAuthService } from '../../services/social-auth/social-auth.service';
-import {Router} from '@angular/router';
-import {ToasterService} from '../../shared/services/toaster.service';
+import { AuthService, FacebookLoginProvider, GoogleLoginProvider, LinkedInLoginProvider, SocialUser } from 'angularx-social-login';
+import { SocialAuthService } from '../../../services/social-auth/social-auth.service';
+import { Router } from '@angular/router';
+import { ToasterService } from '../../../shared/services/toaster.service';
 
 @Component({
   selector: 'app-social-auth',
   templateUrl: './social-auth.component.html',
-  styleUrls: ['./social-auth.component.sass']
+  styleUrls: ['./social-auth.component.scss']
 })
 export class SocialAuthComponent implements OnInit {
 
@@ -21,7 +21,7 @@ export class SocialAuthComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.authService.authState.subscribe( user => {
+    this.authService.authState.subscribe(user => {
       this.user = user;
     });
   }

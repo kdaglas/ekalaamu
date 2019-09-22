@@ -1,0 +1,72 @@
+<div class="signup-container">
+  <div class="signup">
+    <h1 class="title">Ekalaamu</h1>
+    <p class="holder-text">
+      Already have an account? <a href="/auth/login">Log In</a>
+    </p>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" fxLayout="column">
+      <mat-form-field floatLabel="never">
+        <input
+          class="form-control"
+          matInput
+          placeholder="First Name"
+          formControlName="firstName"
+          [errorStateMatcher]="matcher"
+        />
+        <mat-error *ngIf="form.firstName.errors?.required">
+          * Required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="never">
+        <input
+          class="form-control"
+          matInput
+          placeholder="Last Name"
+          formControlName="lastName"
+          [errorStateMatcher]="matcher"
+        />
+        <mat-error *ngIf="form.lastName.errors?.required">
+          * Required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="never">
+        <input
+          class="form-control"
+          matInput
+          placeholder="Email"
+          formControlName="email"
+          [errorStateMatcher]="matcher"
+        />
+        <mat-error
+          *ngIf="form.email.errors?.email && !form.email.errors?.required"
+        >
+          Please enter a valid email address
+        </mat-error>
+        <mat-error *ngIf="form.email.errors?.required">
+          * Required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field floatLabel="never">
+        <input
+          class="form-control"
+          matInput
+          placeholder="Password"
+          formControlName="password"
+          [errorStateMatcher]="matcher"
+        />
+        <mat-error *ngIf="form.password.errors?.required">
+          * Required
+        </mat-error>
+      </mat-form-field>
+
+      <button [disabled]="signupForm.invalid" mat-flat-button>
+        Create Account
+      </button>
+    </form>
+    <p class="holder-text">or create it with</p>
+    <app-social-auth></app-social-auth>
+  </div>
+</div>

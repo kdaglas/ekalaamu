@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
@@ -11,7 +12,7 @@ export class LandingPageComponent implements OnInit {
   ngOnInit() {
     const slides = document.querySelectorAll('.slide');
     const auto = true; // Auto scroll
-    const intervalTime = 5000;
+    const intervalTime = 12000;
     let slideInterval;
 
     const nextSlide = () => {
