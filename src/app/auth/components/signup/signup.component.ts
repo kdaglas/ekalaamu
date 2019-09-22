@@ -1,7 +1,7 @@
-import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroupDirective, NgForm, Validators, FormBuilder, FormGroup} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
-import { AuthService } from '../services/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroupDirective, NgForm, Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -23,7 +23,7 @@ export class SignupComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
   user: any;
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {}
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({

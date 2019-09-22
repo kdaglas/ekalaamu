@@ -1,14 +1,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SocialAuthComponent } from './social-auth.component';
-import {SharedImports} from '../../utils/test/shared-imports';
-import {AuthService} from 'angularx-social-login';
-import { authServiceSpy, socialAuthServiceSpy } from '../../helpers/tests/spies.spec';
-import {SocialAuthService} from '../../services/social-auth/social-auth.service';
-import {of, throwError} from 'rxjs';
-import {triggerEvent} from '../../utils/test/utils';
-import {Router} from '@angular/router';
-import {ToasterService} from '../../shared/services/toaster.service';
+import { SharedImports } from '../../../utils/test/shared-imports';
+import { AuthService } from 'angularx-social-login';
+import { authServiceSpy, socialAuthServiceSpy } from '../../../helpers/tests/spies.spec';
+import { SocialAuthService } from '../../../services/social-auth/social-auth.service';
+import { of, throwError } from 'rxjs';
+import { triggerEvent } from '../../../utils/test/utils';
+import { Router } from '@angular/router';
+import { ToasterService } from '../../../shared/services/toaster.service';
 
 describe('SocialAuthComponent', () => {
   let component: SocialAuthComponent;
@@ -23,19 +23,19 @@ describe('SocialAuthComponent', () => {
   authServiceMock = {
     ...authServiceSpy,
     authState: of('user data'),
-    signIn: () => Promise.resolve( 'Arnold' )
+    signIn: () => Promise.resolve('Arnold')
   };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [...sharedImports.getSharedImports()],
-      declarations: [ SocialAuthComponent ],
+      declarations: [SocialAuthComponent],
       providers: [
         { provide: AuthService, useValue: authServiceMock },
         { provide: SocialAuthService, useValue: socialAuthServiceSpy }
       ]
     })
-    .compileComponents()
+      .compileComponents()
       .then(() => {
         fixture = TestBed.createComponent(SocialAuthComponent);
         component = fixture.componentInstance;
@@ -50,7 +50,7 @@ describe('SocialAuthComponent', () => {
   }));
 
   const setUp = (selector: string): void => {
-    socialAuthServiceSpy.authenticate.and.returnValue(of({firstName: 'test', token: '31trwedhsnadjwydthf'}));
+    socialAuthServiceSpy.authenticate.and.returnValue(of({ firstName: 'test', token: '31trwedhsnadjwydthf' }));
     const buttonNa = fixture.nativeElement.querySelector(selector);
     buttonNa.dispatchEvent(new Event('click'));
     fixture.detectChanges();
@@ -74,7 +74,7 @@ describe('SocialAuthComponent', () => {
   });
 
   it('should display toaster on user sign-up using linkedIn', () => {
-    socialAuthServiceSpy.authenticate.and.returnValue(of({firstName: 'test', token: '31trwedhsnadjwydthf'}));
+    socialAuthServiceSpy.authenticate.and.returnValue(of({ firstName: 'test', token: '31trwedhsnadjwydthf' }));
     const buttonNa = fixture.nativeElement.querySelector('#linkedInBtn');
     buttonNa.dispatchEvent(new Event('click'));
     fixture.detectChanges();

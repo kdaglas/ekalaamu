@@ -1,0 +1,77 @@
+$gray: #9c9c9c;
+
+.signup-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .signup {
+    width: 350px;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: -100px;
+
+    .title {
+      font-family: Noteworthy;
+      margin: 0 !important;
+      font-weight: bold;
+      font-size: 30px;
+      padding: 0 !important;
+      color: #000000;
+    }
+
+    .holder-text {
+      color: #a1a1a1;
+      margin: 25px 0;
+    }
+
+    form {
+      width: 100%;
+      text-align: center;
+
+      .form-control {
+        background-color: #f2f2f2;
+        border-radius: 3px;
+        padding-left: 17px;
+        height: 47px;
+        width: 333px;
+        line-height: 16px;
+        color: #000;
+      }
+
+      .mat-error {
+        font-size: 12px;
+      }
+
+      .mat-flat-button {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+::ng-deep .mat-form-field-infix {
+  border: none;
+}
+::ng-deep .mat-form-field {
+  .mat-form-field-label {
+    color: $gray;
+    margin-top: 17px;
+    margin-left: 17px;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+  }
+}
+
+.mat-flat-button[disabled] {
+  cursor: not-allowed !important;
+  opacity: 0.7 !important;
+}
