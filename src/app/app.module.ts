@@ -1,11 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
-import { SocialAuthComponent } from './components/social-auth/social-auth.component';
 import {
   AuthServiceConfig,
   FacebookLoginProvider,
@@ -15,10 +14,6 @@ import {
 } from 'angularx-social-login';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptorService } from './shared/interceptors/error-interceptor.service';
-import {SocialAuthComponent} from './components/social-auth/social-auth.component';
-
-import { StoreModule } from '@ngrx/store';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { LandingPageComponent } from 'src/app/components/landing-page/landing-page.component';
 
 
