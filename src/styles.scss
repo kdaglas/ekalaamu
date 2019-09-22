@@ -1,7 +1,7 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Ubuntu:400,500,700&display=swap');
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -19,17 +19,20 @@ $ekalaamu-accent: mat-palette($mat-pink, A200, A100, A400);
 $ekalaamu-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$ekalaamu-theme: mat-light-theme($ekalaamu-primary, $ekalaamu-accent, $ekalaamu-warn);
+$ekalaamu-theme: mat-light-theme(
+  $ekalaamu-primary,
+  $ekalaamu-accent,
+  $ekalaamu-warn
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($ekalaamu-theme);
 
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@import '~@angular/material/theming';
+@import "~@angular/material/theming";
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -47,7 +50,11 @@ $ekalaamu-accent: mat-palette($mat-pink, A200, A100, A400);
 $ekalaamu-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$ekalaamu-theme: mat-light-theme($ekalaamu-primary, $ekalaamu-accent, $ekalaamu-warn);
+$ekalaamu-theme: mat-light-theme(
+  $ekalaamu-primary,
+  $ekalaamu-accent,
+  $ekalaamu-warn
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -56,8 +63,12 @@ $ekalaamu-theme: mat-light-theme($ekalaamu-primary, $ekalaamu-accent, $ekalaamu-
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
 
 .toast-success {
   background-color: #0adc09;
@@ -73,5 +84,69 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         color: white !important;
     }
 }
+.toast-error,
+.toast-success {
+  color: #FFF;
+}
+
+.mat-flat-button,
+.login-button,
+.article-title,
+.footer-maintext,
+.site-nav .links li a,
+.about-maintext {
+  font-family: "Ubuntu", sans-serif;
+}
+
+.article-date,
+.article-body,
+.article-author,
+.footer-smalltext,
+.about-smalltext {
+  font-family: "Lato", sans-serif;
+}
+
+.custom-elevation-z2 {
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.08) !important;
+}
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   color: #303030;
+//   font-family: "Ubuntu", sans-serif;
+//   font-style: normal;
+//   font-weight: normal;
+// }
+
+// p {
+//   font-family: "Lato";
+//   font-style: normal;
+//   font-weight: normal;
+//   line-height: 21px;
+//   font-size: 14px;
+//   color: #606060;
+// }
+
+// body {
+//   color: #606060;
+//   background-color: var(--gray3);
+// }
+
+// .mat-flat-button {
+//   font-family: Ubuntu, serif;
+//   font-weight: bold;
+//   text-align: center;
+//   text-transform: uppercase;
+//   color: #ffffff !important;
+//   outline: none;
+// }
+
+// .mat-flat-button:hover {
+//   cursor: pointer;
+// }
 
 .toast-error, .toast-success { color: #FFF}

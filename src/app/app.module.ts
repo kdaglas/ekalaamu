@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,7 +14,8 @@ import {
 } from 'angularx-social-login';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ErrorInterceptorService } from './shared/interceptors/error-interceptor.service';
-import {SocialAuthComponent} from './components/social-auth/social-auth.component';
+import { LandingPageComponent } from 'src/app/components/landing-page/landing-page.component';
+
 
 const config = new AuthServiceConfig([
   {
@@ -35,9 +36,11 @@ export function provideConfig() {
   return config;
 }
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LandingPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,9 @@ export function provideConfig() {
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SocialLoginModule
+    SocialLoginModule,
+    MaterialModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {
@@ -58,6 +63,8 @@ export function provideConfig() {
       multi: true,
     }
   ],
+  entryComponents: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
