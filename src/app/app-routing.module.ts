@@ -4,14 +4,24 @@ import { SocialAuthComponent } from "./components/social-auth/social-auth.compon
 import { LandingPageComponent } from "src/app/components/landing-page/landing-page.component";
 
 const routes: Routes = [
+  // { path: 'social', component: SocialAuthComponent },
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(mod => mod.AuthModule)
+  },
   {
     path: "social",
     component: SocialAuthComponent
   },
   {
-    path: "",
+    path: '',
     component: LandingPageComponent
-  }
+  },
+  {
+    path: '',
+    redirectTo: '',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

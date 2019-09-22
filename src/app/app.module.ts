@@ -1,5 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './modules/material/material.module';
 import { SocialAuthComponent } from './components/social-auth/social-auth.component';
 import {
   AuthServiceConfig,
@@ -8,15 +13,13 @@ import {
   LinkedInLoginProvider,
   SocialLoginModule
 } from 'angularx-social-login';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorInterceptorService } from './shared/interceptors/error-interceptor.service';
 
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { AppRoutingModule } from 'src/app/app-routing.module';
-import { AppComponent } from 'src/app/app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingPageComponent } from 'src/app/components/landing-page/landing-page.component';
-import { MaterialModule } from './modules/material/material.module';
+
 
 const config = new AuthServiceConfig([
   {
@@ -57,6 +60,11 @@ export function provideConfig() {
     {
       provide: AuthServiceConfig,
       useFactory: provideConfig
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptorService,
+      multi: true,
     }
   ],
   entryComponents: [],

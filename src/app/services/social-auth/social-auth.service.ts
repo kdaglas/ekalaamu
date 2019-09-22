@@ -6,7 +6,7 @@ import {environment} from '../../../environments/environment';
   providedIn: 'root'
 })
 export class SocialAuthService {
-  url = environment.base_url;
+  url = environment.baseUrl;
   client_id = environment.client_id;
   client_secret = environment.client_secret;
   callBack = 'http://localhost:4200/social';
