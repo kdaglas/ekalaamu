@@ -44,7 +44,6 @@ export function provideConfig() {
 @NgModule({
   declarations: [
     AppComponent,
-    SocialAuthComponent,
     LandingPageComponent,
   ],
   imports: [
@@ -53,7 +52,8 @@ export function provideConfig() {
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SocialLoginModule,MaterialModule,
+    SocialLoginModule,
+    MaterialModule,
     BrowserAnimationsModule,
   ],
   providers: [
