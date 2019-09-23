@@ -28,6 +28,17 @@ $gray: #9c9c9c;
     .holder-text {
       color: #a1a1a1;
       margin: 25px 0;
+
+      a {
+        color: #a1a1a1;
+        text-decoration: none;
+        transition: .4s;
+      }
+
+      a:hover {
+        color: #000;
+        transition: .4s;
+      }
     }
 
     form {
@@ -61,6 +72,11 @@ $gray: #9c9c9c;
 ::ng-deep .mat-form-field-infix {
   border: none;
 }
+::ng-deep .mat-form-field.mat-focused {
+  .mat-form-field-label {
+    color: #9c9c9c56;
+  }
+}
 ::ng-deep .mat-form-field {
   .mat-form-field-label {
     color: $gray;
@@ -73,5 +89,5 @@ $gray: #9c9c9c;
 
 .mat-flat-button[disabled] {
   cursor: not-allowed !important;
-  opacity: 0.7 !important;
+  color: #747272 !important;
 }
